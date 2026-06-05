@@ -16,29 +16,15 @@ v = sp.Symbol('v')
 
 
 
-def summer1(u,v,ds,dx,x,xo,p,sn,k0,xn): 
+def summer1(u,v,ds,dx,x,xo,p,sn,k0,xn): #Bounded
     n=0
     for i in range(0,len(v)):
         for j in range(1,len(sn)):
             val = k0(sn[j],xn[i],3)
             n=n+p(v[i],sn[j])*u[j][i]*dx*ds*val
     return float(n)
-#El siguiente codigo esta sumando el forzante de U
-#def summer2(u, v, ds, dx, k, l, sn, expr1, p, xn, s, x):
-#    G=0
-    #x_int = sp.Symbol('x_int', real=True)
-#    Ir=sp.integrate(expr1, (s, sn[k-1], sn[k]))
-    #Ir=Ir.subs(x,x_int)
-#    I=sp.integrate(Ir, (x, xn[l-1], xn[l]))
-#    for i in range(0,len(xn)):
-#        for j in range(0,len(sn)-k):
-#            k1=sp.lambdify((r,y),I, "numpy")
-#            G=G+k1(sn[k+j],xn[i])*p(v[i],sn[j])*u[j][i]
-#    print(G)
-# s   return float(G)
 
-
-def summer2(u, v, ds, dx, k, l, sn, expr1, p, xn, s, x):
+def summer2(u, v, ds, dx, k, l, sn, expr1, p, xn, s, x):#Force for u
     G=0
     for i in range(0,len(xn)):
         for j in range(1,len(sn)-k):
@@ -48,28 +34,7 @@ def summer2(u, v, ds, dx, k, l, sn, expr1, p, xn, s, x):
     return float(G)
 
 
-#def summer2(u, v, ds, dx, k, l, sn, expr1, p, xn, s, x):
-#    u = np.array(u)
-#    sn = np.array(sn)
-#    xn = np.array(xn)
-
-    # Precalcular constantes
-#    k_terms = np.exp(-sn[k:]) * (np.exp(sn[k]) - np.exp(sn[k-1]))
-#    B = (xn[l]**2 - xn[l-1]**2)/2 - (xn[l]**3 - xn[l-1]**3)/3
-
-    # Evaluar p(v[i], sn[j]) en forma matricial
-#    P = np.array([[p(v[i], sn[j]) for j in range(len(sn)-k)] for i in range(len(v))])
-
-    # Ajustar dimensiones
-#    U = u[:len(sn)-k, :len(v)]
-
-    # Producto vectorizado
-#    G = np.sum(k_terms[:, None] * B * P.T * U)
-
- #   return float(G)
-    
-#La siguiente función esta manejando el forzante de v
-def summer3(v,u,dx,xn,t,j,w):
+def summer3(v,u,dx,xn,t,j,w):#Force for v
     s=0
     for i in range(0,len(u)):
         s=s+w(t,xn[i],xn[j])*v[i]*u[i]*dx
@@ -82,12 +47,9 @@ def PromInicial(expr,xn,sn,u0,v0,s,x,ds,dx,xo,p,k0):
             Ix = sp.integrate(expr, (x, xn[i-1], xn[i]))
             I = sp.integrate(Ix, (s, sn[j-1], sn[j]))
             u0[j-1][i-1]=I
-    #for i in range(0,len(xn)):
-    #    u0[0][i]=summer1(u0,v0,ds,dx,i,xo,p,sn,k0,xn)
-    #    print(u0[0][i])
     return u0
 
-def aprox(u0,v0,dt,ds,dx,p,sn,xn,tn,expr1,s,x,w,xo,k0):
+def aprox(u0,v0,dt,ds,dx,p,sn,xn,tn,expr1,s,x,w,xo,k0):#Numeric solution.
     Nt=[]
     u=u0[0:-1,0:-1]
     v=v0[0:-1]

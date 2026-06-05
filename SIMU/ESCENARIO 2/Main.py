@@ -20,13 +20,6 @@ x = sp.Symbol('x')
 v = sp.Symbol('v')
 s1=2
 ########################## FUNCIONES
-#expr = sp.exp(-(s+x))/(1-sp.exp(-so))**2     # ojo: usa **, no ^
-#(C+De^(-|x-x^*|/d) d=0.1  #-2 soporte en s, -1 soporte en x, 0.5 donde esta sentrada la integral
-#expr =sp.Piecewise(
-#    (sp.exp(-s)*(1+sp.exp(-(x-0.5)/5))/((5*(1-sp.exp(-(1-0.5)/5))+1+5*(1-sp.exp(-0.5/5)))*(1-sp.exp(-4))), sp.And(s < 4, x>= 0.5)),
-#    (0,     s >= 4),
-#    (sp.exp(-s)*(1+sp.exp((x-0.5)/5))/((5*(1-sp.exp(-(1-0.5)/5))+1+5*(1-sp.exp(-0.5/5)))*(1-sp.exp(-4))), sp.And(s < 4, x< 0.5)) #0.5 donde esta centrado en x
-#)
 
 
 

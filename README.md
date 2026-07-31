@@ -9,41 +9,20 @@ En el siguiente repositorio se encuentran los códigos utilizados para realizar 
 
 **Entrada**
 
-- Promedios celulares iniciales \(u_{i,k}^{0}\).
-- Potencial de membrana inicial \(v_k^{0}\).
-- Parámetros de la malla \(\Delta t\), \(\Delta s\) y \(\Delta x\).
+- Promedios celulares iniciales uᵢₖ⁰.
+- Potencial de membrana inicial vₖ⁰.
+- Parámetros Δt, Δs y Δx.
 
-**Salida**
+**Algoritmo**
 
-- Solución aproximada
-  $$
-  \{(u_{i,k}^{n},v_k^{n})\}_{n=0}^{N_t}.
-  $$
-
-1. Calcular los promedios celulares de la densidad inicial.
-
-2. Para \(n=0,\ldots,N_t-1\):
-
-   1. Calcular los términos de interacción
-      \(G_{i,k}^{\,n}\), para todo \((i,k)\in\mathbb{N}\times I_K\).
-
-   2. Calcular el término de interacción
-      \(H_k^{\,n}\), para todo \(k\in I_K\).
-
-   3. Calcular
-      \(u_{i,k}^{\,n+1}\), para todo \((i,k)\in\mathbb{N}\times I_K\).
-
-   4. Calcular
-      \(v_k^{\,n+1}\), para todo \(k\in I_K\).
-
-   5. Calcular los valores de frontera
-      \(u_{0,k}^{\,n+1}\), para todo \(k\in I_K\).
-
-3. Retornar
-   $$
-   \{(u_{i,k}^{n},v_k^{n})\}_{n=0}^{N_t}.
-   $$
-
+1. Calcular los promedios celulares iniciales.
+2. Para n = 0,…,Nt−1:
+   - Calcular Gᵢₖⁿ.
+   - Calcular Hₖⁿ.
+   - Actualizar uᵢₖⁿ⁺¹.
+   - Actualizar vₖⁿ⁺¹.
+   - Actualizar los valores de frontera.
+3. Retornar la solución aproximada.
 
 ## OTROSIMU
 

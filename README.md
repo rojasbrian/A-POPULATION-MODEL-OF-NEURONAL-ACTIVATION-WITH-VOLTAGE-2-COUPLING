@@ -3,6 +3,47 @@
 
 En el siguiente repositorio se encuentran los códigos utilizados para realizar las simulaciones numéricas presentadas en este trabajo. Con el fin de facilitar su organización y consulta, el repositorio se divide en dos directorios principales, **SIMU** y **OTROSIMU**, cada uno destinado a un conjunto específico de experimentos numéricos. A su vez, cada directorio está estructurado de acuerdo con los objetivos particulares de las simulaciones que contiene, como se describe a continuación.
 
+## PSEUDOCODIGO
+
+## Esquema de volúmenes finitos
+
+**Entrada**
+
+- Promedios celulares iniciales \(u_{i,k}^{0}\).
+- Potencial de membrana inicial \(v_k^{0}\).
+- Parámetros de la malla \(\Delta t\), \(\Delta s\) y \(\Delta x\).
+
+**Salida**
+
+- Solución aproximada
+  $$
+  \{(u_{i,k}^{n},v_k^{n})\}_{n=0}^{N_t}.
+  $$
+
+1. Calcular los promedios celulares de la densidad inicial.
+
+2. Para \(n=0,\ldots,N_t-1\):
+
+   1. Calcular los términos de interacción
+      \(G_{i,k}^{\,n}\), para todo \((i,k)\in\mathbb{N}\times I_K\).
+
+   2. Calcular el término de interacción
+      \(H_k^{\,n}\), para todo \(k\in I_K\).
+
+   3. Calcular
+      \(u_{i,k}^{\,n+1}\), para todo \((i,k)\in\mathbb{N}\times I_K\).
+
+   4. Calcular
+      \(v_k^{\,n+1}\), para todo \(k\in I_K\).
+
+   5. Calcular los valores de frontera
+      \(u_{0,k}^{\,n+1}\), para todo \(k\in I_K\).
+
+3. Retornar
+   $$
+   \{(u_{i,k}^{n},v_k^{n})\}_{n=0}^{N_t}.
+   $$
+
 
 ## OTROSIMU
 

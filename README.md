@@ -39,8 +39,8 @@ En el siguiente repositorio se encuentran los códigos utilizados para realizar 
 La implementación numérica fue desarrollada en **Python** y está organizada en los siguientes archivos principales:
 
 * **Funciones.py**: contiene las funciones auxiliares empleadas en la implementación de los algoritmos numéricos.
-* **Main.py**: archivo principal desde el cual se ejecutan las simulaciones.
-* **NT.py**: implementa los procedimientos numéricos específicos utilizados por el modelo.
+* **Main.py**: implementa los procedimientos numéricos específicos utilizados por el modelo.
+* **NT.py**: archivo principal desde el cual se ejecutan las simulaciones.
 
 El objetivo de esta implementación es verificar numéricamente la **conservación de masa** del modelo. Como es de esperarse, la masa total se conserva mientras el soporte de la solución permanezca contenido en el dominio computacional. Cuando dicho soporte alcanza el borde artificial introducido al truncar el dominio, comienzan a observarse pérdidas de masa debidas al truncamiento y no al modelo continuo.
 
@@ -52,8 +52,8 @@ El archivo **NT.py** realiza el cálculo de la masa total en cada instante de ti
 La implementación numérica fue desarrollada en **Python** y está organizada en los siguientes archivos principales:
 
 * **Funciones.py**: contiene las funciones auxiliares empleadas en la implementación de los algoritmos numéricos.
-* **Main.py**: archivo principal desde el cual se ejecutan las simulaciones.
-* **NT.py**: implementa los procedimientos numéricos específicos utilizados por el modelo.
+* **Main.py**: implementa los procedimientos numéricos específicos utilizados por el modelo.
+* **NT.py**: archivo principal desde el cual se ejecutan las simulaciones.
 
 Además de estos archivos, este directorio contiene dos carpetas adicionales. En ellas se almacenan los resultados numéricos correspondientes a distintos escenarios de simulación. En particular, los archivos ubicados directamente en este directorio corresponden al **Escenario 0**, mientras que las carpetas anexas contienen los resultados asociados a los demás escenarios considerados.
 

@@ -54,3 +54,6 @@ La implementación numérica fue desarrollada en **Python** y está organizada e
 * **Funciones.py**: contiene las funciones auxiliares empleadas en la implementación de los algoritmos numéricos.
 * **Main.py**: archivo principal desde el cual se ejecutan las simulaciones.
 * **NT.py**: implementa los procedimientos numéricos específicos utilizados por el modelo.
+
+Además de estos archivos, este directorio contiene dos carpetas adicionales. En ellas se almacenan los resultados numéricos correspondientes a distintos escenarios de simulación. En particular, los archivos ubicados directamente en este directorio corresponden al **Escenario 0**, mientras que las carpetas anexas contienen los resultados asociados a los demás escenarios considerados.
+

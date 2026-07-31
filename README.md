@@ -57,6 +57,10 @@ La implementación numérica fue desarrollada en **Python** y está organizada e
 
 Además de estos archivos, este directorio contiene dos carpetas adicionales. En ellas se almacenan los resultados numéricos correspondientes a distintos escenarios de simulación. En particular, los archivos ubicados directamente en este directorio corresponden al **Escenario 0**, mientras que las carpetas anexas contienen los resultados asociados a los demás escenarios considerados.
 
-La carpeta **ESCENARIO2** contiene las simulaciones correspondientes al **Escenario 1** presentado en este documento. Su objetivo es analizar el **período refractario** de las neuronas y estudiar el efecto que este fenómeno tiene sobre la dinámica del modelo.
+La carpeta **ESCENARIO2** contiene las simulaciones correspondientes al **Escenario 1** presentado en el documento. Su objetivo es analizar el **período refractario** de las neuronas y estudiar el efecto que este fenómeno tiene sobre la dinámica del modelo.
+
+
+La carpeta **ESCENARIO 4** contiene las simulaciones correspondientes al **Escenario 2** presentado en este documento. Su objetivo es analizar la influencia del **acoplamiento entre el voltaje y la función de densidad**. Para evidenciar este efecto, el modelo de voltaje se sometió a diferentes estímulos externos, con el fin de estudiar cómo las variaciones del potencial de membrana modifican la evolución de la densidad neuronal. En particular, las simulaciones muestran el impacto de dichos estímulos sobre la densidad de neuronas que acaban de generar un potencial de acción en cada instante de tiempo.
+
 
 

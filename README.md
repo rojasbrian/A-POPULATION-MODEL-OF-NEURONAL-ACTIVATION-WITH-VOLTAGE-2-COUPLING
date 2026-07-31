@@ -12,3 +12,6 @@ La implementación numérica fue desarrollada en **Python** y está organizada e
 * **Main.py**: archivo principal desde el cual se ejecutan las simulaciones.
 * **NT.py**: implementa los procedimientos numéricos específicos utilizados por el modelo.
 
+El objetivo de esta implementación es verificar numéricamente la **conservación de masa** del modelo. Como es de esperarse, la masa total se conserva mientras el soporte de la solución permanezca contenido en el dominio computacional. Cuando dicho soporte alcanza el borde artificial introducido al truncar el dominio, comienzan a observarse pérdidas de masa debidas al truncamiento y no al modelo continuo.
+
+El archivo **NT.py** realiza el cálculo de la masa total en cada instante de tiempo y almacena los resultados en el archivo **MM.xlsx**, el cual permite analizar la evolución de esta magnitud a lo largo de la simulación.

@@ -7,22 +7,32 @@ En el siguiente repositorio se encuentran los códigos utilizados para realizar 
 
 ## Esquema de volúmenes finitos
 
-**Entrada**
+### Entrada
 
-- Promedios celulares iniciales uᵢₖ⁰.
-- Potencial de membrana inicial vₖ⁰.
-- Parámetros Δt, Δs y Δx.
+- `u_{i,k}^{0}`: promedios celulares iniciales de la densidad neuronal.
+- `v_k^{0}`: aproximación inicial del potencial de membrana.
+- `Δt`: paso temporal.
+- `Δs`: tamaño de la discretización de la variable de edad.
+- `Δx`: tamaño de la discretización espacial.
+- `N_t`: número total de pasos de tiempo.
 
-**Algoritmo**
+### Salida
 
-1. Calcular los promedios celulares iniciales.
-2. Para n = 0,…,Nt−1:
-   - Calcular Gᵢₖⁿ.
-   - Calcular Hₖⁿ.
-   - Actualizar uᵢₖⁿ⁺¹.
-   - Actualizar vₖⁿ⁺¹.
-   - Actualizar los valores de frontera.
-3. Retornar la solución aproximada.
+- Aproximación numérica de la solución
+  \((u_{i,k}^{n},\,v_k^{n})\) para todos los instantes
+  \(n=0,\ldots,N_t\).
+
+### Algoritmo
+
+1. Calcular los promedios celulares de la condición inicial.
+2. Para cada paso temporal \(n=0,\ldots,N_t-1\):
+   1. Calcular los términos de interacción `G_{i,k}^n`.
+   2. Calcular el término de interacción `H_k^n`.
+   3. Actualizar la densidad neuronal `u_{i,k}^{n+1}`.
+   4. Actualizar el potencial de membrana `v_k^{n+1}`.
+   5. Imponer la condición de frontera para `u_{0,k}^{n+1}`.
+3. Retornar la aproximación numérica completa
+   \((u_{i,k}^{n},\,v_k^{n})\).
 
 ## OTROSIMU
 
